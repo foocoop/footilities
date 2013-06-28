@@ -1,4 +1,18 @@
 <?php
+
+/*
+
+
+INSTRUCCIONES:
+
+1. colocar insert.php y insert_post.jpg en el folder de la instalación de WP
+2. abrir navegador e ir a http://urldelsitio/insert.php
+3. revisar que haya funcionado dentro del wp-admin
+
+
+*/
+
+
 #!/usr/local/php5/bin/php
 include( "wp-load.php" );
 // include( "wp-config.php" );
@@ -6,8 +20,8 @@ include( "wp-load.php" );
 // include ('wp-includes/post.php');
 
 $authorID = "admin";
-$title = "titulo";
-$post_type = "post";
+$title = "prueba product 1";
+$post_type = "prueba_product";
 $publish = 'publish';
 $excerpt = "Lorem ipsum dolor sit amet.";
 $content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
