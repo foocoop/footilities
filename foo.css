@@ -1,0 +1,154 @@
+
+
+/***********************************
+ *			GRALES	
+ * ********************************/
+ 
+ 
+ .hidden {
+/*
+	visibility:hidden;
+*/
+	display:none;
+ }
+
+
+.debug{
+	padding:20px;
+	margin:20px;
+	border:3px solid red;
+}
+
+.ajax-loader{
+	width: 30px;
+	height:15px;
+}
+
+.center {
+	text-align:center;
+}
+
+.justify {
+	text-align:justify;
+}
+
+.scroll_hide {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  display: inline-block;
+
+}
+.scroller {
+  display: inline-block;
+  height: 100%;
+  overflow: auto;
+  width: 107%;
+  padding:0 10px;
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+
+/***********************************
+ *			FRAMEWORK	
+ * ********************************/
+ 
+ 
+ 
+ 
+ 
+.vcenter_table {display:table; height:100%; width:100%; }
+.vcenter_container {display:table-cell; vertical-align:middle; text-align:center; }
+.vcenter_content {display:inline-block; 	width:85%; }
+
+
+
+
+
+
+
+
+
+.curtain_holder {
+	position: relative !important;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	text-align:center;
+	
+}
+
+.curtain_holder .behind_curtain {
+	display: block;	
+}
+.curtain_holder > div {
+	top: 0;
+	left: 0;
+/*
+	display:inline-block;
+*/
+	width: 100%;
+	height: 100%;
+}
+
+.curtain_holder > div > img {
+	width: 100%;
+	height: 100%;
+}
+
+.curtain {
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	/* IE 7-7 */
+	filter: alpha(opacity=70);
+	/* Netscape */
+	-moz-opacity: 0.7;
+	/* Safari 1.x */
+	-khtml-opacity: 0.7;
+	/* Good browsers */
+	opacity: 0.7;
+	
+	background-color:#fff;
+}
+
+.curtain_holder .curtain, 
+.curtain_holder .over_curtain {
+	display: none !important;	
+	position: absolute !important;
+	
+}
+
+.curtain_holder:hover > .over_curtain,
+.curtain_holder:hover > .curtain{
+	display:inline-block !important;
+}
+
+
+
+
+
+
+
+
+.menu_barra {
+	border-top: 2px solid #d1d1d1;
+	border-bottom: 2px solid #d1d1d1;
+	margin-bottom: 5px;
+	width:100%;
+	display:inline-block;
+	height:30px;
+}
+.menu_barra li {
+	font-size:11px;
+	font-weight:bold;
+	text-transform:uppercase;
+	display:inline-block;
+	width:7%;
+	text-align:center;
+	margin:10px 0;
+}
+
+.menu_barra li a {
+	color:#343434;
+}
