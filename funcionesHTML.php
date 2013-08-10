@@ -122,11 +122,6 @@ function foo_featImg( $size = 'full', $id = "" ){
 }
 
 
-function foo_rmimgs( $content ) {
-   return preg_replace('/<img[^>]+./','',$content);
-}
-
-
 function foo_imgs( $ID, $size = 'thumbnail', $addFeatured = 'false') {
   $photos = get_children( array('post_parent' => $ID, 'post_status' => 'null', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC') ); 
   $results = array();
@@ -304,6 +299,11 @@ function foo_filter($content="",$filter="filter"){
 function foo_strip( $content, $tag ) {
 	$content = preg_replace('/<'.$tag.'[^>]+./','', $content);
 	return $content;
+}
+
+function foo_split_txt( $txt="", $num_chars=20 ) {
+  $lines = explode("\n", wordwrap($txt, $num_chars));
+  return $lines;
 }
 
 function foo_article( $args ) {
