@@ -122,8 +122,13 @@ function foo_featImg( $size = 'full', $id = "" ){
 }
 
 
-function foo_imgs( $eventoID, $size = 'thumbnail', $addFeatured = 'false') {
-  $photos = get_children( array('post_parent' => $eventoID, 'post_status' => 'null', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC') ); 
+function foo_rmimgs( $content ) {
+   return preg_replace('/<img[^>]+./','',$content);
+}
+
+
+function foo_imgs( $ID, $size = 'thumbnail', $addFeatured = 'false') {
+  $photos = get_children( array('post_parent' => $ID, 'post_status' => 'null', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC') ); 
   $results = array();
   
   if($addFeatured)
