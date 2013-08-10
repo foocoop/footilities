@@ -97,12 +97,21 @@ function foo_span($id="",$class="", $content="", $link=""){
 
 
 
-function foo_img($src=""){
-	if($src!="") {
-  		$str = '<img src="'.$src.'"/>';
-	}
+function foo_imgdir($filename=""){
+  if($filename!="") {
+    $str = '<img src="' . themeDir() . "/img/" . $filename . '"/>';
+  }
 
-	return $str;
+  return $str;
+}
+
+
+function foo_img($src=""){
+  if($src!="") {
+    $str = '<img src="'.$src.'"/>';
+  }
+
+  return $str;
 }
 
 function foo_featImg( $size = 'full', $id = "" ){
