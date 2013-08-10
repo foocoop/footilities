@@ -99,7 +99,7 @@ function foo_span($id="",$class="", $content="", $link=""){
 
 function foo_imgdir($filename=""){
   if($filename!="") {
-    $str = '<img src="' . themeDir() . "/img/" . $filename . '"/>';
+    $str = '<img src="' . themeDir() . '/img/' . $filename . '"/>';
   }
 
   return $str;
