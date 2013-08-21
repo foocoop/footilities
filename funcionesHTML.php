@@ -132,7 +132,8 @@ function foo_imgs( $ID, $size = 'thumbnail', $addFeatured = 'false') {
   if ($photos) {
     foreach ($photos as $photo) {
       // get the correct image html for the selected size
-      $results[] = wp_get_attachment_image_src($photo->ID, $size);
+            $att_img_src = wp_get_attachment_image_src($photo->ID, $size);
+            $results[] = $att_img_src[0];
     }
   }
   return $results;
