@@ -303,6 +303,8 @@ function foo_post(){
   
   $arr['ttl'] = foo_filter( get_the_title(), 'title');
   $arr['ext'] = foo_filter( get_the_excerpt(), 'excerpt');
+  $arr['cnt'] = foo_filter( get_the_content(), 'content');
+  $arr['meta'] = get_post_meta( get_the_ID() );
   $arr['url'] = get_the_permalink( get_the_ID() );
   $arr['img'] = foo_featImg( get_the_ID() );
   
