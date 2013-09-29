@@ -301,6 +301,7 @@ function foo_filter($content="",$filter="filter"){
 function foo_post(){
   $arr = array();
   
+  $arr['ID'] = get_the_ID();
   $arr['ttl'] = foo_filter( get_the_title(), 'title');
   $arr['ext'] = foo_filter( get_the_excerpt(), 'excerpt');
   $arr['cnt'] = foo_filter( get_the_content(), 'content');
