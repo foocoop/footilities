@@ -315,6 +315,28 @@ function foo_post(){
 
 
 
+
+function foo_post($ID){
+
+
+  $arr = array();
+  $post = get_post($ID);
+  $arr['ID'] = $ID;
+  $arr['ttl'] = foo_filter( get_the_title($post), 'title');
+  $arr['ext'] = foo_filter( get_the_excerpt($post), 'excerpt');
+  $arr['cnt'] = foo_filter( get_the_content($post), 'content');
+  $arr['meta'] = get_post_meta( $ID );
+  $arr['url'] = get_permalink( $ID );
+  $arr['img'] = foo_featImg( $ID );
+  
+  return $arr;
+
+}
+
+
+
+
+
 function foo_strip( $content, $tag ) {
 	$content = preg_replace('/<'.$tag.'[^>]+./','', $content);
 	return $content;
