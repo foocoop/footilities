@@ -316,7 +316,7 @@ function foo_post(){
 
 
 
-function foo_post($ID){
+function foo_post_ID($ID){
 
 
   $arr = array();
