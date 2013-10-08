@@ -60,6 +60,7 @@ class Page_Template_Filter {
 <?php 
 }
 
+}
 add_action('admin_init', 'load_ptf');
 function load_ptf() {
   $Page_Template_Filter = new Page_Template_Filter;

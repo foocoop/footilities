@@ -139,6 +139,28 @@ function foo_imgs( $ID, $size = 'thumbnail', $addFeatured = 'false') {
   return $results;
 }
 
+function foo_imgs_meta($postID){
+
+  $args = array(
+    'post_type' => 'attachment',
+    'numberposts' => -1,
+    'post_status' => null,
+    'post_parent' => $postID
+  );
+
+  $attachments = get_posts( $args );
+  if ( $attachments ) {
+    
+    foreach ( $attachments as $attachment ) {
+      $echo = "";
+      $echo .= wp_get_attachment_image( $attachment->ID, 'full' );
+      $echo .= foo_filter( $attachment->post_title, 'title' );
+      $echo = foo_li("","", $echo);
+    }
+  }
+
+
+}
 
 function foo_thumb( $src, $w=200, $h=200, $zc=1, $q=100 ) {
   return themeDir().'/scripts/timthumb/timthumb.php?src='.$src.'&w='.(int)$w.'&h='.(int)$h.'&zc='.(int)$zc.'&q='.(int)$q;
