@@ -148,17 +148,21 @@ function foo_imgs_meta($postID){
     'post_parent' => $postID
   );
 
+  $lis = "";
+
   $attachments = get_posts( $args );
+
   if ( $attachments ) {
     
     foreach ( $attachments as $attachment ) {
       $echo = "";
       $echo .= wp_get_attachment_image( $attachment->ID, 'full' );
       $echo .= foo_filter( $attachment->post_title, 'title' );
-      $echo = foo_li("","", $echo);
+      $lis .= foo_li("","", $echo);
     }
   }
 
+  return $lis;
 
 }
 
