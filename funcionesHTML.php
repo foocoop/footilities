@@ -398,20 +398,35 @@ function foo_dbg( $content ) {
 }
 
 function dbg( $content ) {
+  echo foo_open("debug_in","");
 
+  var_dump($content);
+
+  echo foo_close();
+
+
+  
 ?>
 <script type="text/javascript">
+
  jQuery(document).ready(function($){
-   var content = "hola";
+//   var content = <?php// echo json_encode($content); ?>;
+
+   var content = $("#debug_in");
    var dbg = $('.debug');
    if( dbg.length == 0 ) {
-     var dbg = $('<div>').attr('class','debug');
+     var dbg = $('<div>').addClass("debug shadow");
      $('body').prepend( dbg );
    }
-   dbg.append( $('<div>').attr('class','window').html( content ) );
+   
+   dbg.append( $('<div>').attr('class','window').html( content.html() ) );
+   content.remove();
+
+   
+ });
 </script>
 <?php
-	echo foo_div("","debug",$content);
+//	echo foo_div("","debug",$content);
 
 }
 
