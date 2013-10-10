@@ -152,3 +152,15 @@
 .menu_barra li a {
 	color:#343434;
 }
+
+
+.tercio {
+    width:33%;
+}
+.cuarto {
+    width:25%;
+}
+
+.mitad  {
+    width:50%;
+}
