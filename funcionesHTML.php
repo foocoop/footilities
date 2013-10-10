@@ -398,7 +398,21 @@ function foo_dbg( $content ) {
 }
 
 function dbg( $content ) {
+
+?>
+<script type="text/javascript">
+ jQuery(document).ready(function($){
+   var content = "hola";
+   var dbg = $('.debug');
+   if( dbg.length == 0 ) {
+     var dbg = $('<div>').attr('class','debug');
+     $('body').prepend( dbg );
+   }
+   dbg.append( $('<div>').attr('class','window').html( content ) );
+</script>
+<?php
 	echo foo_div("","debug",$content);
+
 }
 
 ?>
