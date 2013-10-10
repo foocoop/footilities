@@ -393,8 +393,11 @@ function foo_article( $args ) {
 	return $str;
 }
 
-
 function foo_dbg( $content ) {
+  echo foo_div("","debug",$content);
+}
+
+function dbg( $content ) {
 	echo foo_div("","debug",$content);
 }
 
