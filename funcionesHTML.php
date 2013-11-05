@@ -114,9 +114,13 @@ function foo_img($src=""){
 }
 
 function foo_featImg( $size = 'full', $id = "" ){
+  if($id == "") {
+    $id = get_the_ID();
+  }
   $img = get_the_post_thumbnail($id, $size);
 
   return $img;
+
 }
 
 
