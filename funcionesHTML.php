@@ -114,13 +114,11 @@ function foo_img($src=""){
 }
 
 function foo_featImg( $size = 'full', $id = "" ){
-  if($id == "") {
-    $id = get_the_ID();
-  }
-  $img = get_the_post_thumbnail($id, $size);
-
-  return $img;
-
+  if($id != "")
+    $img = wp_get_attachment_image_src( get_post_thumbnail_id($id), $size);
+  else
+    $img = wp_get_attachment_image_src( get_post_thumbnail_id(), $size);
+  return $img[0];
 }
 
 
