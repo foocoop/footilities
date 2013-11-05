@@ -114,11 +114,9 @@ function foo_img($src=""){
 }
 
 function foo_featImg( $size = 'full', $id = "" ){
-  if($id != "")
-    $img = wp_get_attachment_image_src( get_post_thumbnail_id($id), $size);
-  else
-    $img = wp_get_attachment_image_src( get_post_thumbnail_id(), $size);
-  return $img[0];
+  $img = get_the_post_thumbnail($id, $size);
+
+  return $img;
 }
 
 
@@ -169,8 +167,6 @@ function foo_imgs_meta($postID){
 function foo_thumb( $src, $w=200, $h=200, $zc=1, $q=100 ) {
   return themeDir().'/scripts/timthumb/timthumb.php?src='.$src.'&w='.(int)$w.'&h='.(int)$h.'&zc='.(int)$zc.'&q='.(int)$q;
 }
-
-
 
 
 

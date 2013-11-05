@@ -2,6 +2,7 @@
 
 // textbox repetible : 
 
+
 function foo_textbox_meta_box() {
   global $post;
 
