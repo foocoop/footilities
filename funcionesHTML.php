@@ -126,14 +126,19 @@ function foo_imgs( $ID, $size = 'thumbnail', $addFeatured = 'false') {
   $photos = get_children( array('post_parent' => $ID, 'post_status' => 'null', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC') ); 
   $results = array();
   
-  if($addFeatured)
-	$results[]  = foo_featImg();
-	
+  if($addFeatured) {
+    $feat = foo_featImg();
+    if($feat) $results[]  = foo_featImg();
+	      
+  }
+    
   if ($photos) {
     foreach ($photos as $photo) {
       // get the correct image html for the selected size
-            $att_img_src = wp_get_attachment_image_src($photo->ID, $size);
-            $results[] = $att_img_src[0];
+      $att_img_src = wp_get_attachment_image_src($photo->ID, $size);
+      $src = $att_img_src[0];
+      if($src != NULL && $src != "" )
+      $results[] = $src;
     }
   }
   return $results;
@@ -334,6 +339,7 @@ function foo_post(){
   $arr['meta'] = get_post_meta( get_the_ID() );
   $arr['url'] = get_permalink( get_the_ID() );
   $arr['img'] = foo_featImg( get_the_ID() );
+  $arr['date'] = get_the_date();
   
   return $arr;
 
@@ -393,41 +399,9 @@ function foo_article( $args ) {
 	return $str;
 }
 
+
 function foo_dbg( $content ) {
-  echo foo_div("","debug",$content);
-}
-
-function dbg( $content ) {
-  echo foo_open("debug_in","");
-
-  var_dump($content);
-
-  echo foo_close();
-
-
-  
-?>
-<script type="text/javascript">
-
- jQuery(document).ready(function($){
-//   var content = <?php// echo json_encode($content); ?>;
-
-   var content = $("#debug_in");
-   var dbg = $('.debug');
-   if( dbg.length == 0 ) {
-     var dbg = $('<div>').addClass("debug shadow");
-     $('body').prepend( dbg );
-   }
-   
-   dbg.append( $('<div>').attr('class','window').html( content.html() ) );
-   content.remove();
-
-   
- });
-</script>
-<?php
-//	echo foo_div("","debug",$content);
-
+	echo foo_div("","debug",$content);
 }
 
 ?>
