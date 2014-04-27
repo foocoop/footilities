@@ -1,8 +1,8 @@
 <?php
 
 // textbox repetible : 
-
-
+/*
+*/
 function foo_textbox_meta_box() {
   global $post;
 
@@ -103,38 +103,12 @@ function foo_textbox_save($post_id) {
   elseif ( empty($new) && $old )
   delete_post_meta( $post_id, 'textbox', $old );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* dropdown o select repetible */
 
-
-
-
-
-
-
-
-
-
-
+/*
+Esto desde el nombre es una función HARDCODEADA
+Busca un campo llamado PARTICIPANTES, en el posttype INVITADO
+*/
 
 function foo_participantes_meta_box() {
   global $post;
@@ -287,18 +261,5 @@ function foo_participantes_save($post_id) {
   elseif ( empty($new) && $old )
   delete_post_meta( $post_id, 'participantes', $old );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
